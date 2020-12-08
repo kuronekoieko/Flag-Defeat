@@ -85,6 +85,6 @@ public class DozerController : MonoBehaviour
             state = DozerState.Control;
         });
 
-
+        flag.Defeat(transform.forward);
     }
 }
