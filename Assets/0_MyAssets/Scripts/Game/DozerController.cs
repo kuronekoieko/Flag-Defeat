@@ -29,8 +29,6 @@ public class DozerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-
-
         rb.velocity = vel * 7f;
         if (vel.sqrMagnitude > 0.1f) transform.forward = vel;
     }
