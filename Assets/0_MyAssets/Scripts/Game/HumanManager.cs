@@ -8,7 +8,7 @@ public class HumanManager : MonoBehaviour
     HumanController[] humanControllers;
     void Start()
     {
-        Vector3 startPos = new Vector3(-3.44f, 0.55f, 3.15f);
+        Vector3 startPos = new Vector3(-3.44f, 0.55f, 0.15f);
         Vector3 pos = startPos;
         float offset = 0.75f;
         humanControllers = new HumanController[100];
