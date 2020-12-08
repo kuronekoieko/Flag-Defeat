@@ -69,6 +69,7 @@ public class DozerController : MonoBehaviour
     {
         var flag = other.gameObject.GetComponent<FlagController>();
         if (flag == null) return;
+        CameraController.i.Shake();
         state = DozerState.Back;
         float backSpeed = 10f;
         Vector3 dir = -transform.forward;

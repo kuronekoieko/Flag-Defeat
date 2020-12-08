@@ -10,13 +10,22 @@ using DG.Tweening;
 public class CameraController : MonoBehaviour
 {
     public static CameraController i;
+    Vector3 startPos;
     void Start()
     {
-        if (i == null) i = this;
+        i = this;
+        startPos = transform.position;
     }
 
     void Update()
     {
 
+    }
+
+    public void Shake()
+    {
+        Sequence sequence = DOTween.Sequence()
+            .Append(transform.DOShakePosition(duration: 1, strength: 0.3f))
+            .Append(transform.DOLocalMove(startPos, 0.5f));
     }
 }
