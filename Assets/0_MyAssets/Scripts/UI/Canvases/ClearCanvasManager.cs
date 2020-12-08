@@ -34,30 +34,38 @@ public class ClearCanvasManager : BaseCanvasManager
 
     protected override void OnOpen()
     {
-        UICameraController.i.PlayConfetti();
-        bool isLastStage = Variables.currentSceneBuildIndex == Variables.lastSceneBuildIndex;
-        nextButton.gameObject.SetActive(!isLastStage);
-        retryButton.gameObject.SetActive(isLastStage);
-        if (isLastStage) titleText.text = "COMPLETE!";
 
-        DOVirtual.DelayedCall(1.2f, () =>
+
+        DOVirtual.DelayedCall(0.5f, () =>
         {
-            gameObject.SetActive(true);
-            transform.localScale = Vector3.zero;
-            transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack);
+            UICameraController.i.PlayConfetti();
+            bool isLastStage = Variables.currentSceneBuildIndex == Variables.lastSceneBuildIndex;
+            nextButton.gameObject.SetActive(!isLastStage);
+            retryButton.gameObject.SetActive(isLastStage);
+            if (isLastStage) titleText.text = "COMPLETE!";
 
-            retryButton.transform.localScale = Vector3.one;
-            retryButtonSequence = DOTween.Sequence()
-            .Append(retryButton.transform.DOScale(Vector3.one * 1.1f, 0.5f))
-            .Append(retryButton.transform.DOScale(Vector3.one, 0.5f));
-            retryButtonSequence.SetLoops(-1);
 
-            nextButton.transform.localScale = Vector3.one;
-            nextButtonSequence = DOTween.Sequence()
-            .Append(nextButton.transform.DOScale(Vector3.one * 1.1f, 0.5f))
-            .Append(nextButton.transform.DOScale(Vector3.one, 0.5f));
-            nextButtonSequence.SetLoops(-1);
+            DOVirtual.DelayedCall(1.2f, () =>
+            {
+                gameObject.SetActive(true);
+                transform.localScale = Vector3.zero;
+                transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack);
+
+                retryButton.transform.localScale = Vector3.one;
+                retryButtonSequence = DOTween.Sequence()
+                .Append(retryButton.transform.DOScale(Vector3.one * 1.1f, 0.5f))
+                .Append(retryButton.transform.DOScale(Vector3.one, 0.5f));
+                retryButtonSequence.SetLoops(-1);
+
+                nextButton.transform.localScale = Vector3.one;
+                nextButtonSequence = DOTween.Sequence()
+                .Append(nextButton.transform.DOScale(Vector3.one * 1.1f, 0.5f))
+                .Append(nextButton.transform.DOScale(Vector3.one, 0.5f));
+                nextButtonSequence.SetLoops(-1);
+            });
         });
+
+
     }
 
     protected override void OnClose()
