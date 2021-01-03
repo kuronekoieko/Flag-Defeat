@@ -15,7 +15,7 @@ namespace PushEmAllToy
         [SerializeField] DynamicJoystick joystick;
         Vector3 vel;
         PlayerState state;
-        float controlSpeed = 7f;
+        float controlSpeed = 10f;
 
         void Start()
         {
@@ -55,7 +55,7 @@ namespace PushEmAllToy
             switch (state)
             {
                 case PlayerState.Control:
-                    rb.velocity = vel * 7f;
+                    rb.velocity = vel * controlSpeed;
                     if (vel.sqrMagnitude > 0.1f) transform.forward = vel;
                     break;
                 case PlayerState.Back:
