@@ -7,12 +7,17 @@ public class HumanController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    public void OnInstantiate()
+    {
+        transform.forward = -Vector3.forward;
     }
 }

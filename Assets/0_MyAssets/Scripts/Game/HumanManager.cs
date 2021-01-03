@@ -16,6 +16,7 @@ public class HumanManager : MonoBehaviour
         for (int i = 0; i < humanControllers.Length; i++)
         {
             humanControllers[i] = Instantiate(humanPrefab, pos, Quaternion.identity, transform);
+            humanControllers[i].OnInstantiate();
             xCount++;
             pos.x += offset;
             if (xCount == 10)
