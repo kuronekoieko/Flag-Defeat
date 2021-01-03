@@ -14,7 +14,7 @@ public class HumanController1 : MonoBehaviour
             Vector3 targetPos = protectedTf.position;
             targetPos.y = transform.position.y;
             transform.LookAt(targetPos);
-            Vector3 vel = transform.forward * 3f;
+            Vector3 vel = transform.forward * 1f;
             vel.y = rb.velocity.y;
             rb.velocity = vel;
         }
