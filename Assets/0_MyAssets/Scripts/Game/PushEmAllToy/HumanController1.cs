@@ -43,4 +43,14 @@ public class HumanController1 : MonoBehaviour
             isFallen = true;
         }
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Protected"))
+        {
+            if (Variables.screenState != ScreenState.Game) return;
+            Variables.screenState = ScreenState.Failed;
+            Debug.Log(Variables.screenState);
+        }
+    }
 }
