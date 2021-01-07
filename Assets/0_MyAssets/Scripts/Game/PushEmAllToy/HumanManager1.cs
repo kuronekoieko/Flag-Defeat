@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class HumanManager1 : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class HumanManager1 : MonoBehaviour
         {
             humanControllers[i] = Instantiate(humanPrefab, pos, Quaternion.identity, transform);
             humanControllers[i].OnInstantiate(protectedTf);
+            humanControllers[i].transform.localPosition = pos;
             xCount++;
             pos.x += offset;
             if (xCount == 10)
@@ -27,5 +29,15 @@ public class HumanManager1 : MonoBehaviour
                 xCount = 0;
             }
         }
+    }
+
+    public int HumanCount()
+    {
+        return humanControllers.Count();
+    }
+
+    public int FallCount()
+    {
+        return humanControllers.Where(h => h.isFallen).Count();
     }
 }

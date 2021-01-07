@@ -7,6 +7,7 @@ TagManager:
   - Fire
   - Protected
   - Ground
+  - FallCheck
   layers:
   - Default
   - TransparentFX
