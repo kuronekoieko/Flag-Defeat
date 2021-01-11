@@ -132,6 +132,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Industrial_015
       objectReference: {fileID: 0}
+    - target: {fileID: 1180988622061172, guid: f63f60c7ad879fb40947b7ba64c2b884, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4066616753094472, guid: f63f60c7ad879fb40947b7ba64c2b884, type: 3}
       propertyPath: m_LocalPosition.y
       value: 9.73
@@ -294,6 +298,69 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 70340815}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &509380122
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 610409447}
+    m_Modifications:
+    - target: {fileID: 100000, guid: 69b54a3bc3aadf1468544d4f59b1d9b8, type: 3}
+      propertyPath: m_Name
+      value: Construction_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 69b54a3bc3aadf1468544d4f59b1d9b8, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 69b54a3bc3aadf1468544d4f59b1d9b8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 69b54a3bc3aadf1468544d4f59b1d9b8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 69b54a3bc3aadf1468544d4f59b1d9b8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 69b54a3bc3aadf1468544d4f59b1d9b8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 69b54a3bc3aadf1468544d4f59b1d9b8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000021855694
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 69b54a3bc3aadf1468544d4f59b1d9b8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 69b54a3bc3aadf1468544d4f59b1d9b8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 69b54a3bc3aadf1468544d4f59b1d9b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 69b54a3bc3aadf1468544d4f59b1d9b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 69b54a3bc3aadf1468544d4f59b1d9b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 69b54a3bc3aadf1468544d4f59b1d9b8, type: 3}
+--- !u!4 &509380123 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 69b54a3bc3aadf1468544d4f59b1d9b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 509380122}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &583605255
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,7 +442,7 @@ GameObject:
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -387,10 +454,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 610409446}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -9.29, z: -11.33}
+  m_LocalPosition: {x: 0, y: 0.72, z: -11.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 24556422}
+  - {fileID: 509380123}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -405,8 +473,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.4692614, y: 2.668931, z: 4.231922}
-  m_Center: {x: -0.045067668, y: 11.173319, z: 0.5051489}
+  m_Size: {x: 2.3068182, y: 2.5645812, z: 2.972746}
+  m_Center: {x: 0.036153913, y: 1.2722951, z: -0.4922247}
 --- !u!54 &610409449
 Rigidbody:
   m_ObjectHideFlags: 0
