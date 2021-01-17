@@ -59,10 +59,8 @@ public class DozerController1 : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision other)
+    public void AttackBound()
     {
-        var flag = other.gameObject.GetComponent<FlagController>();
-        if (flag == null) return;
         CameraController.i.Shake();
         state = DozerState.Back;
         float backSpeed = 10f;
@@ -78,7 +76,11 @@ public class DozerController1 : MonoBehaviour
         {
             state = DozerState.Control;
         });
+    }
 
-        flag.Defeat(transform.forward);
+
+    public void Broken()
+    {
+
     }
 }
