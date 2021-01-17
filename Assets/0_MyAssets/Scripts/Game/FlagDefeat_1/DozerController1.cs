@@ -11,6 +11,15 @@ public class DozerController1 : MonoBehaviour
     [NonSerialized] public DozerState state;
     float controlSpeed = 7f;
 
+    PlayerDozerController playerDozerController;
+    EnemyDozerController enemyDozerController;
+
+    private void Awake()
+    {
+        playerDozerController = GetComponent<PlayerDozerController>();
+        enemyDozerController = GetComponent<EnemyDozerController>();
+    }
+
     void Start()
     {
         state = DozerState.Control;

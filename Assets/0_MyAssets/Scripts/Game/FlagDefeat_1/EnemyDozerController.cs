@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class EnemyDozerController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    DozerController1 dozerController;
+    private void Awake()
     {
-        
+        dozerController = GetComponent<DozerController1>();
     }
 
-    // Update is called once per frame
+    void Start()
+    {
+
+    }
+
+  
     void Update()
     {
-        
+
     }
 }
