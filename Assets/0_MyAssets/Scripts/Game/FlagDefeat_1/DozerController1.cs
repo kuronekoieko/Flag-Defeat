@@ -27,7 +27,7 @@ public class DozerController1 : MonoBehaviour
 
     public void AttackBound()
     {
-        CameraController.i.Shake();
+        if (playerDozerController) CameraController.i.Shake();
         state = DozerState.Back;
         float backSpeed = 10f;
         Vector3 dir = -transform.forward;
@@ -47,6 +47,6 @@ public class DozerController1 : MonoBehaviour
 
     public void Broken()
     {
-
+        gameObject.SetActive(false);
     }
 }
