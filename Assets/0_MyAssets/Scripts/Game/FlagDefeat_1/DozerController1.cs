@@ -11,6 +11,9 @@ public class DozerController1 : MonoBehaviour
     [NonSerialized] public DozerState state;
     [SerializeField] ParticleSystem brokenPs;
     float controlSpeed = 15f;
+    Vector3 startPos;
+    Vector3 startForward;
+
 
     PlayerDozerController playerDozerController;
     EnemyDozerController enemyDozerController;
@@ -24,6 +27,8 @@ public class DozerController1 : MonoBehaviour
     void Start()
     {
         state = DozerState.Control;
+        startPos = transform.position;
+        startForward = transform.forward;
     }
 
     public void AttackBound()
@@ -52,5 +57,11 @@ public class DozerController1 : MonoBehaviour
         brokenPs.transform.position = transform.position;
         brokenPs.Play();
         gameObject.SetActive(false);
+        DOVirtual.DelayedCall(3f, () =>
+        {
+            gameObject.SetActive(true);
+            transform.position = startPos;
+            transform.forward = startForward;
+        });
     }
 }
