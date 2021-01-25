@@ -9,6 +9,7 @@ public class DozerController1 : MonoBehaviour
     public Rigidbody rb;
 
     [NonSerialized] public DozerState state;
+    [SerializeField] ParticleSystem brokenPs;
     float controlSpeed = 7f;
 
     PlayerDozerController playerDozerController;
@@ -47,6 +48,9 @@ public class DozerController1 : MonoBehaviour
 
     public void Broken()
     {
+        brokenPs.transform.parent = null;
+        brokenPs.transform.position = transform.position;
+        brokenPs.Play();
         gameObject.SetActive(false);
     }
 }
