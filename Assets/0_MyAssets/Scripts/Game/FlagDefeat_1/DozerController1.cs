@@ -10,7 +10,7 @@ public class DozerController1 : MonoBehaviour
 
     [NonSerialized] public DozerState state;
     [SerializeField] ParticleSystem brokenPs;
-    float controlSpeed = 7f;
+    float controlSpeed = 15f;
 
     PlayerDozerController playerDozerController;
     EnemyDozerController enemyDozerController;
@@ -30,7 +30,7 @@ public class DozerController1 : MonoBehaviour
     {
         if (playerDozerController) CameraController.i.Shake();
         state = DozerState.Back;
-        float backSpeed = 10f;
+        float backSpeed = 15f;
         Vector3 dir = -transform.forward;
         DOTween.To(() => backSpeed, (x) => backSpeed = x, 0, 0.7f)
         .SetEase(Ease.Linear)

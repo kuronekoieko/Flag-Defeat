@@ -30,7 +30,8 @@ public class PlayerDozerController : MonoBehaviour
                 {
                     vel = Vector3.zero;
                 }
-                dozerController.rb.velocity = vel * 7f;
+                // dozerController.rb.velocity = vel * 20f;
+                dozerController.rb.AddForce((vel * 17f - dozerController.rb.velocity) * 20f);
                 if (vel.sqrMagnitude > 0.1f) transform.forward = vel;
                 break;
             case DozerState.Back:
