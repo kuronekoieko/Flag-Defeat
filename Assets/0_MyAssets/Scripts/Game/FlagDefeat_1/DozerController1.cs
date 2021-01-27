@@ -17,6 +17,7 @@ public class DozerController1 : MonoBehaviour
 
     PlayerDozerController playerDozerController;
     EnemyDozerController enemyDozerController;
+    public bool IsPlayer => playerDozerController;
 
     private void Awake()
     {

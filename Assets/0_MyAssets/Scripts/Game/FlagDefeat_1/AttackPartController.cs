@@ -40,10 +40,10 @@ public class AttackPartController : MonoBehaviour
 
     void HitFlag(Collider other)
     {
-        var flag = other.gameObject.GetComponent<FlagController>();
+        var flag = other.gameObject.GetComponent<FlagController_1>();
         if (flag == null) return;
         dozerController.AttackBound();
-        flag.Defeat(transform.forward);
+        flag.Defeat(transform.forward, dozerController);
         Debug.Log("旗");
     }
 
