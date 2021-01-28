@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/0_MyAssets/Scenes/UIScene.unity
     guid: 655efcd1f35d84a17811e309dc5ffc43
   - enabled: 1
+    path: Assets/0_MyAssets/Scenes/FlagDefeat_1.unity
+    guid: 02da781a20dae4a149975e6a93fbc53e
+  - enabled: 0
     path: Assets/0_MyAssets/Scenes/PushEmAllToy.unity
     guid: 94030216029f14f9685acf8a62dd5ccd
   - enabled: 0

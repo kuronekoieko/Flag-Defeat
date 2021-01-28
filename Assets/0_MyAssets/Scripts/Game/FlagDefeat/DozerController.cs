@@ -6,6 +6,7 @@ using DG.Tweening;
 
 public enum DozerState
 {
+    Waiting,
     Control,
     Back,
 }

@@ -29,6 +29,8 @@ public class AttackPartController : MonoBehaviour
         if (dozerBody == dozerController) return;
         dozerController.AttackBound();
         dozerBody.Broken();
+        var enemy = dozerController.enemyDozerController;
+        if (enemy) enemy.isTargetFlag = !enemy.isTargetFlag;
     }
 
     void HitDozerAttack(Collider other)

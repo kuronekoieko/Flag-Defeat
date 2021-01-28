@@ -15,8 +15,8 @@ public class DozerController1 : MonoBehaviour
     Vector3 startForward;
 
 
-    PlayerDozerController playerDozerController;
-    EnemyDozerController enemyDozerController;
+    public PlayerDozerController playerDozerController { get; set; }
+    public EnemyDozerController enemyDozerController { get; set; }
     public bool IsPlayer => playerDozerController;
 
     private void Awake()
@@ -27,7 +27,7 @@ public class DozerController1 : MonoBehaviour
 
     void Start()
     {
-        state = DozerState.Control;
+
         startPos = transform.position;
         startForward = transform.forward;
     }
@@ -60,9 +60,16 @@ public class DozerController1 : MonoBehaviour
         gameObject.SetActive(false);
         DOVirtual.DelayedCall(3f, () =>
         {
-            gameObject.SetActive(true);
-            transform.position = startPos;
-            transform.forward = startForward;
+            Respawn();
         });
+
+    }
+
+    void Respawn()
+    {
+        gameObject.SetActive(true);
+        transform.position = startPos;
+        transform.forward = startForward;
+        if (enemyDozerController) enemyDozerController.isTargetFlag = !enemyDozerController.isTargetFlag;
     }
 }

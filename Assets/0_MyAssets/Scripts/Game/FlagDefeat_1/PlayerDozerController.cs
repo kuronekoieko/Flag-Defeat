@@ -14,9 +14,14 @@ public class PlayerDozerController : MonoBehaviour
         dozerController = GetComponent<DozerController1>();
     }
 
+    private void Start()
+    {
+        dozerController.state = DozerState.Control;
+    }
+
     void Update()
     {
-
+        if (Variables.screenState != ScreenState.Game) return;
         switch (dozerController.state)
         {
             case DozerState.Control:
@@ -31,7 +36,7 @@ public class PlayerDozerController : MonoBehaviour
                     vel = Vector3.zero;
                 }
                 // dozerController.rb.velocity = vel * 20f;
-                dozerController.rb.AddForce((vel * 17f - dozerController.rb.velocity) * 20f);
+                dozerController.rb.AddForce((vel * 13f - dozerController.rb.velocity) * 100f);
                 if (vel.sqrMagnitude > 0.1f) transform.forward = vel;
                 break;
             case DozerState.Back:
